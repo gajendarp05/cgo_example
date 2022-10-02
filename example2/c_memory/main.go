@@ -14,8 +14,10 @@ import "C"
 import "fmt"
 
 func main() {
+	// Allocated to C memory
 	cMemory := C.calloc(1, C.sizeof_numbers)
-	C.free(cMemory)
+	// Explicit call free to C memory
+	defer C.free(cMemory)
 	n := (*C.numbers)(cMemory)
 	n.a = 10
 	n.b = 20
