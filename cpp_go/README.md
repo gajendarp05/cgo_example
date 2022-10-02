@@ -1,9 +1,11 @@
-add.cpp is an utility of CPP we need to call From Go
-Create a libadd.so file from add.cpp
+__add.cpp__ is an utility of CPP is called From Go
 
-gcc -c -o add.o add.cpp
-gcc -shared -o libadd.so add.o
+**Steps to create a libadd.so file from add.cpp**
 
-adder.c  - c code sample to use so library in c and call the add utility
+1. gcc -c -o add.o add.cpp
 
-In Go, we are using cgo to call add utility
+2. gcc -shared -o libadd.so add.o
+
+__adder.c__  - C code sample to use so library in c and call the add utility
+
+In Go code, we are using ***cgo*** to call add utility of libadd.so
